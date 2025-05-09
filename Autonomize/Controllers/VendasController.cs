@@ -39,7 +39,7 @@ namespace Autonomize.Controllers
             return View(venda);
         }
 
-        // ✅ GET: Vendas/CriarVenda
+        // GET: Vendas/CriarVenda
         public IActionResult CriarVenda()
         {
             ViewData["Clientes"] = new SelectList(_context.Clientes, "IDCliente", "NomeCliente");
@@ -54,7 +54,7 @@ namespace Autonomize.Controllers
             });
         }
 
-        // ✅ POST: Vendas/CriarVenda
+        // POST: Vendas/CriarVenda
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CriarVenda(CriarVendaViewModel model)
