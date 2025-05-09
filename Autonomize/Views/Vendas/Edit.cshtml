@@ -1,0 +1,49 @@
+﻿@model Autonomize.Models.Venda
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Venda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IDVenda" />
+            <div class="form-group">
+                <label asp-for="IDUsuario" class="control-label"></label>
+                <select asp-for="IDUsuario" class="form-control" asp-items="ViewBag.IDUsuario"></select>
+                <span asp-validation-for="IDUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDCliente" class="control-label"></label>
+                <select asp-for="IDCliente" class="form-control" asp-items="ViewBag.IDCliente"></select>
+                <span asp-validation-for="IDCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataVenda" class="control-label"></label>
+                <input asp-for="DataVenda" class="form-control" />
+                <span asp-validation-for="DataVenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalVenda" class="control-label"></label>
+                <input asp-for="TotalVenda" class="form-control" />
+                <span asp-validation-for="TotalVenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

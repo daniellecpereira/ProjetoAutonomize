@@ -1,0 +1,63 @@
+﻿@model Autonomize.Models.ViewModels.CriarVendaViewModel
+
+@{
+    ViewData["Title"] = "Nova Venda";
+}
+
+<h1>Nova Venda</h1>
+
+<form asp-action="CriarVenda" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="IDCliente" class="control-label"></label>
+        <select asp-for="IDCliente" class="form-control" asp-items="@(ViewData["Clientes"] as SelectList)">
+            <option value="">Selecione um cliente</option>
+        </select>
+        <span asp-validation-for="IDCliente" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IDProduto" class="control-label"></label>
+        <select asp-for="IDProduto" class="form-control" asp-items="@(ViewData["Produtos"] as SelectList)">
+            <option value="">Selecione um produto</option>
+        </select>
+        <span asp-validation-for="IDProduto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DataVenda" class="control-label"></label>
+        <input asp-for="DataVenda" class="form-control" type="date" />
+        <span asp-validation-for="DataVenda" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Quantidade" class="control-label"></label>
+        <input asp-for="Quantidade" class="form-control" type="number" min="1" />
+        <span asp-validation-for="Quantidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TipoPagamento" class="control-label"></label>
+        <select asp-for="TipoPagamento" class="form-control" asp-items="@(ViewData["TiposPagamento"] as SelectList)">
+            <option value="">Selecione</option>
+        </select>
+        <span asp-validation-for="TipoPagamento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PrecoUnitario" class="control-label"></label>
+        <input asp-for="PrecoUnitario" class="form-control" readonly />
+    </div>
+
+    <div class="form-group mt-3">
+        <input type="submit" value="Finalizar Venda" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
