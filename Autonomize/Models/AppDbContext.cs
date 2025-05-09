@@ -28,7 +28,7 @@ namespace Autonomize.Models
                 .HasOne(iv => iv.Venda)
                 .WithMany(v => v.ItensVenda)
                 .HasForeignKey(iv => iv.IDVenda)
-                .OnDelete(DeleteBehavior.Restrict); // <- isso resolve o erro
+                .OnDelete(DeleteBehavior.Restrict); 
         }
     }
 }
