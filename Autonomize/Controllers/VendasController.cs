@@ -39,7 +39,7 @@ namespace Autonomize.Controllers
             return View(venda);
         }
 
-        // ✅ GET: Vendas/CriarVenda
+        // GET: Vendas/CriarVenda
         public IActionResult CriarVenda()
         {
             ViewData["Clientes"] = new SelectList(_context.Clientes, "IDCliente", "NomeCliente");
@@ -54,7 +54,7 @@ namespace Autonomize.Controllers
             });
         }
 
-        // ✅ POST: Vendas/CriarVenda
+        // POST: Vendas/CriarVenda
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CriarVenda(CriarVendaViewModel model)
@@ -68,7 +68,7 @@ namespace Autonomize.Controllers
             }
 
             var produto = await _context.Produtos.FindAsync(model.IDProduto);
-            var usuario = await _context.Usuarios.FirstOrDefaultAsync(); // Simulação
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(); 
 
             if (produto == null || usuario == null)
             {
