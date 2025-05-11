@@ -4,41 +4,64 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<h1 class="mb-4">Dashboard</h1>
+<h2>Visão Geral</h2>
 
 <div class="row">
-    <div class="col-md-3">
-        <div class="card text-white mb-3" style="background-color: #004F71;">
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
             <div class="card-body">
-                <h5 class="card-title">Total de Vendas</h5>
-                <p class="card-text fs-4">@Model.TotalVendas</p>
+                <h6>Total de Produtos</h6>
+                <p class="fs-4 fw-bold">@Model.TotalProdutos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h6>Alertas de Estoque</h6>
+                <p class="fs-4 text-danger">--</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h6>Vendas Recentes</h6>
+                <p class="fs-4">--</p>
             </div>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="card text-white mb-3" style="background-color: #004F71;">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
             <div class="card-body">
-                <h5 class="card-title">Total de Clientes</h5>
-                <p class="card-text fs-4">@Model.TotalClientes</p>
+                <h6>Movimento de Estoque</h6>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h6>Categoria</h6>
+                <p>--</p>
             </div>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="card text-white mb-3" style="background-color: #004F71;">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
             <div class="card-body">
-                <h5 class="card-title">Total de Produtos</h5>
-                <p class="card-text fs-4">@Model.TotalProdutos</p>
+                <h6>Clientes</h6>
+                <p>@Model.TotalClientes</p>
             </div>
         </div>
     </div>
-
-    <div class="col-md-3">
-        <div class="card text-white mb-3" style="background-color: #004F71;">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
             <div class="card-body">
-                <h5 class="card-title">Valor Total Vendido</h5>
-                <p class="card-text fs-4">R$ @Model.ValorTotalVendido.ToString("N2")</p>
+                <h6>Financeiro</h6>
+                <p>R$ @Model.ValorTotalVendido.ToString("N2")</p>
             </div>
         </div>
     </div>
