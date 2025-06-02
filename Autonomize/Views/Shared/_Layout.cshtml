@@ -117,6 +117,11 @@
                         <button type="submit" class="btn btn-outline-danger btn-sm">Sair</button>
                     </form>
                 }
+                else
+                {
+                    <a class="btn btn-outline-primary btn-sm" asp-controller="Usuarios" asp-action="Login">Login</a>
+                }
+            
             </div>
             <main role="main" class="pb-3">
                 @RenderBody()
