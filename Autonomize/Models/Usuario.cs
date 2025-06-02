@@ -17,6 +17,5 @@ namespace Autonomize.Models
         public string Senha { get; set; }
 
         [Required]
-        public string TipoUsuario { get; set; } // admin, vendedor, funcionario
-    }
+        public string TipoUsuario { get; set; } 
 }
