@@ -26,7 +26,6 @@ namespace Autonomize.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        // GET: Usuarios/Login
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
@@ -34,7 +33,6 @@ namespace Autonomize.Controllers
             return View();
         }
 
-        // POST: Usuarios/Login
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string emailUsuario, string senha)
@@ -61,11 +59,12 @@ namespace Autonomize.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("Login", "Usuarios");
         }
 
         public async Task<IActionResult> Details(int? id)

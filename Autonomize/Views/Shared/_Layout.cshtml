@@ -108,6 +108,16 @@
         </div>
 
         <div id="conteudo">
+            <div class="d-flex justify-content-end align-items-center gap-3 mb-3">
+                @if (User.Identity?.IsAuthenticated ?? false)
+                {
+                    <span class="text-dark">Olá, <strong>@User.Identity.Name</strong></span>
+                    <form asp-controller="Usuarios" asp-action="Logout" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Sair</button>
+                    </form>
+                }
+            </div>
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>

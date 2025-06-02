@@ -17,5 +17,6 @@ namespace Autonomize.Models
         public string Senha { get; set; }
 
         [Required]
-        public string TipoUsuario { get; set; } 
+        public string TipoUsuario { get; set; }
+    }
 }
