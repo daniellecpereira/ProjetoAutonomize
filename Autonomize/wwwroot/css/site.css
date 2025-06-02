@@ -1,35 +1,65 @@
-html {
-  font-size: 14px;
+html, body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    height: 100%;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+#sidebar {
+    width: 220px;
+    background-color: #2a74c0;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    #sidebar .nav-link {
+        color: white;
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+
+        #sidebar .nav-link:hover,
+        #sidebar .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+        }
+
+    #sidebar img {
+        max-height: 40px;
+    }
+
+    #sidebar .brand-text {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+        #sidebar .brand-text .light {
+            color: #cfe3fa;
+        }
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.topbar {
+    background-color: #fff;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-body {
-  margin-bottom: 60px;
-}
-.navbar-brand img {
-    max-height: 40px;
-    background: transparent;
-}
-
-.navbar {
-    background-color: #ffffff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
-
-body {
-    background-color: #f8f9fa;
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e1e4e8;
+    margin-top: 2rem;
 }
