@@ -17,12 +17,14 @@
         <dd class="col-sm-9">@Model.EmailUsuario</dd>
 
         <dt class="col-sm-3">Senha</dt>
-        <dd class="col-sm-9">@Model.Senha</dd>
+        <dd class="col-sm-9">********</dd> 
 
         <dt class="col-sm-3">Perfil</dt>
         <dd class="col-sm-9">@tipoFormatado</dd>
     </dl>
 
-    <a asp-action="Edit" asp-route-id="@Model.IDUsuario" class="btn btn-primary">Editar</a>
-    <a asp-action="Index" class="btn btn-secondary ms-2">Voltar</a>
+    <div class="d-flex justify-content-start gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.IDUsuario" class="btn btn-primary w-25">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary w-25">Voltar</a>
+    </div>
 </div>
