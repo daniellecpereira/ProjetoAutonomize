@@ -7,16 +7,16 @@ namespace Autonomize.Models
         [Key]
         public int IDUsuario { get; set; }
 
-        [Required]
+        [Display(Name = "Nome")]
         public string NomeUsuario { get; set; }
 
-        [Required]
+        [Display(Name = "Email")]
         public string EmailUsuario { get; set; }
 
-        [Required]
+        [Display(Name = "Senha")]
         public string Senha { get; set; }
 
-        [Required]
+        [Display(Name = "Perfil")]
         public string TipoUsuario { get; set; }
     }
 }
