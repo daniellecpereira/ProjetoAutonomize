@@ -8,7 +8,7 @@
 
 <h2 class="mb-4 text-danger">Excluir Usuário</h2>
 
-<div class="card p-4 shadow-sm mb-4 border-danger">
+<div class="card p-4 shadow-sm mb-4 border border-danger">
     <dl class="row">
         <dt class="col-sm-3">Nome</dt>
         <dd class="col-sm-9">@Model.NomeUsuario</dd>
@@ -17,15 +17,14 @@
         <dd class="col-sm-9">@Model.EmailUsuario</dd>
 
         <dt class="col-sm-3">Senha</dt>
-        <dd class="col-sm-9">@Model.Senha</dd>
-
+        <dd class="col-sm-9">********</dd> 
         <dt class="col-sm-3">Perfil</dt>
         <dd class="col-sm-9">@tipoFormatado</dd>
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="IDUsuario" />
-        <input type="submit" value="Excluir" class="btn btn-danger" />
-        <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+        <input type="submit" value="Excluir" class="btn btn-danger me-2" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
